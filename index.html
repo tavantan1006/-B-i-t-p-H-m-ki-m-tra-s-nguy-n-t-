@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<label for="nhapSo">Nhập số : </label>
+<input type="text" id="nhapSo" oninput="isPrime(this.value)" >
+<p id="ketqua"></p>
+<body>
+<script>
+    function isPrime(number){
+        let a = document.getElementById("nhapSo").value;
+        let check = true;
+        for (let i = 2; i <= Math.sqrt(a); i++) {
+            if (a%i==0){
+                check = false;
+                break;
+            }
+        }
+        if (check){
+            document.getElementById("ketqua").innerText = "a là số nguyên tố !!!";
+        }else {
+            document.getElementById("ketqua").innerText = "a không phải là số nguyên tố !!";
+        }
+    }
+</script>
+</body>
+</html>
